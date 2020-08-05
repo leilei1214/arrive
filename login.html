@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>呼叫車系統</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">   
+    <link rel="import" href="./title.html">
+    <link rel="stylesheet" href="./css/login/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <form id="login">
+            <h2>login</h2>
+            <label>
+                <h4>使用者名稱:</h4>
+                <input type="text" id="user" placeholder="請輸入使用者名稱">
+            </label>
+            <label>
+                <h4>Email:</h4>
+                <input type="text" id="email" placeholder="請輸入Email">
+            </label>
+            <input type="submit" value="登入">
+        </form>
+    </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/title.js"></script>
+<script>
+    $("#login").submit(function(event){
+        var user =$("#user").val();
+        var email =$("#email").val();
+        console.log(user);
+        
+        event.preventDefault();
+        query(user,email);
+    })
+//     if(localStorage.getItem("user")==null){
+//         console.log(localStorage.getItem("user"));
+//         console.log("123");
+//         window.location.href="./login.html";
+//     }else{
+//         window.location.href="./car.html";
+//     }
+</script>

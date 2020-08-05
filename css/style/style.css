@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.Change {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Change-container {
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: right;
+}
+
+label {
+  margin: 10px auto;
+  position: relative;
+  width: 100%;
+  font-size: 100px;
+}
+
+input[type=text] {
+  width: calc(100% - 10px);
+  font-size: 20px;
+  padding: 8px 4px;
+}
+
+input[type=text]:focus {
+  border-color: dodgerblue;
+  -webkit-box-shadow: 0 0 4px dodgerblue;
+          box-shadow: 0 0 4px dodgerblue;
+}
+
+input[type=submit] {
+  background: dodgerblue;
+  font-size: 18px;
+  padding: 7px;
+  border: 0;
+}
+
+main {
+  width: 80%;
+  float: left;
+}
+
+main .content {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+main .content ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main .rfid_l {
+  float: left;
+  height: 100vh;
+  width: 20%;
+  text-align: center;
+}
+
+main .rfid_l ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main .rfid_r {
+  float: left;
+  height: 100vh;
+  width: 20%;
+  text-align: center;
+}
+
+main .rfid_r ul {
+  height: 100vh;
+}
+
+main .rfid_r ul li {
+  height: 33.3333%;
+}
+
+main .rfid_r ul a {
+  height: 100%;
+  line-height: 120px;
+}
+
+main .area_c {
+  float: left;
+  width: 60%;
+  height: 100vh;
+}
+
+main .area {
+  height: 33.3333%;
+}
+
+main .area ul {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
+}
+
+main .area ul li {
+  float: left;
+  width: 33.3333%;
+  height: 70px;
+}
+
+main .area ul li a {
+  color: #000;
+  background: #888;
+  cursor: pointer;
+  display: block;
+  line-height: 70px;
+  font-size: 30px;
+  height: 70px;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
