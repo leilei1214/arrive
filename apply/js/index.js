@@ -1,6 +1,7 @@
  
  import QRCode from 'qrcode'
  // Initialize Firebase
+
 var firebaseConfig = {
     apiKey: "AIzaSyBAhMf__8N07Mw2WtN25W5-1QgsH8KKC8M",
     authDomain: "li-case-218e2.firebaseapp.com",
@@ -76,7 +77,7 @@ $("#apply").submit(function(event){
     // })
     // .then(function () {alert("成功創建使用者！");})
     // .catch(function () {alert("伺服器發生錯誤，請稍後再試。");});
-
+    }
 })
 // db.ref('users/').on('value', function(snapshot) {
 //     //alert(Object.keys(snapshot.val()))
