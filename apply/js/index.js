@@ -1,4 +1,6 @@
-    	// Initialize Firebase
+ 
+ import QRCode from 'qrcode'
+ // Initialize Firebase
 var firebaseConfig = {
     apiKey: "AIzaSyBAhMf__8N07Mw2WtN25W5-1QgsH8KKC8M",
     authDomain: "li-case-218e2.firebaseapp.com",
@@ -29,52 +31,33 @@ $("#apply").submit(function(event){
         // alert("true");
         event.preventDefault();
        
-         c = "name"+':'+ $(this).find("input[name=name]").val(),
-         a = "gmail"+':'+ $(this).find("input[name=gmail]").val(),
-         b =  "key" +':'+ "2020"
-        // num = {a,b};
-        // new QRCode(document.getElementById('output'), 'your content');
-        // console.log(num)
-        // 设置参数方式
-        var qrcode = new QRCode('output', {
-          text: 'your content',
-          width: 256,
-          height: 256,
-          colorDark : '#000000',
-          colorLight : '#ffffff',
-          correctLevel : QRCode.CorrectLevel.H
-        });
+         data={ "name": $(this).find("input[name=name]").val(),
+         "gmail": $(this).find("input[name=gmail]").val(),
+           "key" : "2020"}
         
-        // 使用 API
-        qrcode.clear();
-        a = qrcode.makeCode('{'+a+','+b+'}');
-        console.log(document.getElementById('output').innerHTML)
+        QRCode.toDataURL(data)
+        .then(url=>{
+            console.log(url);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+        
+    //     Email.send({
+    //         SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
+    //         To : gmail,
+    //         From : "a0933252747@gmail.com",
+    //         Subject : "This is the subject",
+    //         Body : document.getElementById('output').innerHTML
+    //     }).then(
+    //       message => alert(message),
+    //       document.getElementById('output')=""
+    //     );
 
-        // qrcode.clear();
-        // qrcode.makeCode(elText);
-
-        // qrcode({})
-        
-        // alert(qrc);
-        
-        
-
-        
-        Email.send({
-            SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
-            To : gmail,
-            From : "a0933252747@gmail.com",
-            Subject : "This is the subject",
-            Body : document.getElementById('output').innerHTML
-        }).then(
-          message => alert(message),
-          document.getElementById('output')=""
-        );
-
-    }
-    else{
-        alert("Gmail no");
-    }
+    // }
+    // else{
+    //     alert("Gmail no");
+    // }
     // "name":$(this).find("input[name=name]").val(),
     //     "gmail":$(this).find("input[name=gmail]").val(),
     //     "phone":$(this).find("input[name=phone]").val(),
