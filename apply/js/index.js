@@ -36,7 +36,7 @@ $("#apply").submit(function(event){
          "gmail": $(this).find("input[name=gmail]").val(),
            "key" : "2020"}
         
-           var QRId = "123456789"
+           var QRId = '"'+data+'"';
            var qrcode = new QRCode("apply", {
                text: QRId,
                width: 200,
@@ -45,8 +45,8 @@ $("#apply").submit(function(event){
                colorLight : "#ffffff",
                correctLevel : QRCode.CorrectLevel.H
            });
-           var canvas = document.getElementById('apply').querySelector('canvas');
-           var dataURL = canvas.toDataURL();
+        //    var canvas = document.getElementById('apply').querySelector('canvas');
+           var dataURL = qrcode.toDataURL();
            console.log(dataURL);
         
     //     Email.send({
