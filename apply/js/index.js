@@ -35,6 +35,20 @@ $("#apply").submit(function(event){
          data={ "name": $(this).find("input[name=name]").val(),
          "gmail": $(this).find("input[name=gmail]").val(),
            "key" : "2020"}
+
+           function display_post(data_val){
+            keys = Object.keys(data_val);
+                  posts = '';
+                  
+                  for (var i = keys.length - 1; i >= 0; i--) {
+                      console.log(keys[i]);
+                    
+                  }
+    
+        }
+        db.ref('users/').on('value',function(snapshot){
+            display_post(snapshot.val());
+        });
         
            var QRId =  $(this).find("input[name=gmail]").val();
            var qrcode = new QRCode("apply", {
