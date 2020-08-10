@@ -1,5 +1,3 @@
-
-
 /**
  * @fileoverview
  * - Using the 'QRCode for Javascript library'
@@ -613,4 +611,4 @@ var QRCode;
 	 * @name QRCode.CorrectLevel
 	 */
 	QRCode.CorrectLevel = QRErrorCorrectLevel;
-})
+})();
