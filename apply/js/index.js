@@ -49,7 +49,7 @@ $("#apply").submit(function(event){
            var dataURL = canvas.toDataURL();
            console.log(dataURL);
            alert("註冊成功");
-           window.location.href('./index.html')
+           window.location.href='./index.html';
     //     Email.send({
     //         SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
     //         To : gmail,
