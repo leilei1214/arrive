@@ -1,7 +1,7 @@
  
-//  import QRCode from 'qrcode'
+ import QRCode from 'qrcode'
  // Initialize Firebase
-var QRCode = require('qrcode');
+// var QRCode = require('qrcode');
 var firebaseConfig = {
     apiKey: "AIzaSyBAhMf__8N07Mw2WtN25W5-1QgsH8KKC8M",
     authDomain: "li-case-218e2.firebaseapp.com",
@@ -39,6 +39,7 @@ $("#apply").submit(function(event){
         QRCode.toDataURL(data,function(data,err){
             console.log(data);
         })
+       
         
     //     Email.send({
     //         SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
