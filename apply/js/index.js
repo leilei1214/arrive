@@ -36,9 +36,9 @@ $("#apply").submit(function(event){
          "gmail": $(this).find("input[name=gmail]").val(),
            "key" : "2020"}
         
-           var QRId = '"'+data+'"';
+           var QRId =  $(this).find("input[name=gmail]").val();
            var qrcode = new QRCode("apply", {
-               text: QRId,
+               text:QRId,
                width: 200,
                height: 200,
                colorDark : "#000000",
