@@ -48,7 +48,8 @@ $("#apply").submit(function(event){
         //    var canvas = document.getElementById('apply').querySelector('canvas');
            var dataURL = qrcode.toDataURL();
            console.log(dataURL);
-        
+           alert("註冊成功");
+           window.location.href("./index.js");
     //     Email.send({
     //         SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
     //         To : gmail,
