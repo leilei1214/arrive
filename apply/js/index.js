@@ -1,7 +1,7 @@
  
 //  import QRCode from 'qrcode'
  // Initialize Firebase
-
+var QRCode = require('qrcode');
 var firebaseConfig = {
     apiKey: "AIzaSyBAhMf__8N07Mw2WtN25W5-1QgsH8KKC8M",
     authDomain: "li-case-218e2.firebaseapp.com",
@@ -36,12 +36,8 @@ $("#apply").submit(function(event){
          "gmail": $(this).find("input[name=gmail]").val(),
            "key" : "2020"}
         
-        QRCode.toDataURL(data)
-        .then(url=>{
-            console.log(url);
-        })
-        .catch(err=>{
-            console.log(err);
+        QRCode.toDataURL(data,function(data,err){
+            console.log(data);
         })
         
     //     Email.send({
