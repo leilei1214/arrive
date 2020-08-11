@@ -59,11 +59,11 @@ $("#apply").submit(function(event){
                             To : gmail,
                             From : "a0933252747@gmail.com",
                             Subject : "This is the subject",
-                            Body : "<img src="+dataURL+">"
+                            Body :' "<img src="+dataURL+">"'
                         }).then(
-                        message => alert(message),
+                            message => alert(message),
                         );
-                        window.location.href='./index.html';
+                        // window.location.href='./index.html';
                     }
                     
                   }
