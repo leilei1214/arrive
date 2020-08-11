@@ -38,10 +38,33 @@ $("#apply").submit(function(event){
 
            function display_post(data_val){
             keys = Object.keys(data_val);
-                  posts = '';
-                  
                   for (var i = keys.length - 1; i >= 0; i--) {
                       console.log(keys[i]);
+                    if(gmail == keys[i] ){
+                        alert("已註冊");
+                    }else{
+                        var QRId =  $(this).find("input[name=gmail]").val();
+                        var qrcode = new QRCode("apply", {
+                            text:QRId,
+                            width: 200,
+                            height: 200,
+                            colorDark : "#000000",
+                            colorLight : "#ffffff",
+                            correctLevel : QRCode.CorrectLevel.H
+                        });
+                        var canvas = document.getElementById('apply').querySelector('canvas');
+                        var dataURL = canvas.toDataURL();
+                        Email.send({
+                            SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
+                            To : gmail,
+                            From : "a0933252747@gmail.com",
+                            Subject : "This is the subject",
+                            Body : '<img src="'+dataURL+'">'
+                        }).then(
+                        message => alert(message),
+                        document.getElementById('output')="" );
+                        window.location.href='./index.html';
+                    }
                     
                   }
     
@@ -50,30 +73,8 @@ $("#apply").submit(function(event){
             display_post(snapshot.val());
         });
         
-           var QRId =  $(this).find("input[name=gmail]").val();
-           var qrcode = new QRCode("apply", {
-               text:QRId,
-               width: 200,
-               height: 200,
-               colorDark : "#000000",
-               colorLight : "#ffffff",
-               correctLevel : QRCode.CorrectLevel.H
-           });
-           var canvas = document.getElementById('apply').querySelector('canvas');
-           var dataURL = canvas.toDataURL();
-           console.log(dataURL);
-           alert("註冊成功");
-           window.location.href='./index.html';
-    //     Email.send({
-    //         SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
-    //         To : gmail,
-    //         From : "a0933252747@gmail.com",
-    //         Subject : "This is the subject",
-    //         Body : document.getElementById('output').innerHTML
-    //     }).then(
-    //       message => alert(message),
-    //       document.getElementById('output')=""
-    //     );
+
+
 
     // }
     // else{
