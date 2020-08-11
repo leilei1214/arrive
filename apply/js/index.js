@@ -62,7 +62,7 @@ $("#apply").submit(function(event){
                             Body : '<img src="'+dataURL+'">'
                         }).then(
                         message => alert(message),
-                        document.getElementById('output')="" );
+                        );
                         window.location.href='./index.html';
                     }
                     
