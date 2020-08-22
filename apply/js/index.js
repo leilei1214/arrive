@@ -43,7 +43,7 @@ $("#apply").submit(function(event){
                     if(gmail == keys[i] ){
                         alert("已註冊");
                     }else{
-                        var QRId =  $(this).find("input[name=gmail]").val();
+                        var QRId = gmail;
                         console.log(QRId);
                         new QRCode("apply", {
                             text:QRId,
