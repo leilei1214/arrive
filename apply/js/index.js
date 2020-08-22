@@ -55,15 +55,15 @@ $("#apply").submit(function(event){
                         var canvas = document.getElementById('apply').querySelector('canvas');
                         var dataURL = canvas.toDataURL();
                         console.log(dataURL);
-                        Email.send({
-                            SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
-                            To : gmail,
-                            From : "a0933252747@gmail.com",
-                            Subject : "This is the subject",
-                            Body :'<img src="'+dataURL+'">' 
-                        }).then(
-                            message => alert(message),
-                        );
+                        // Email.send({
+                        //     SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
+                        //     To : gmail,
+                        //     From : "a0933252747@gmail.com",
+                        //     Subject : "This is the subject",
+                        //     Body :'<img src="'+dataURL+'">' 
+                        // }).then(
+                        //     message => alert(message),
+                        // );
                         // window.location.href='./index.html';
                     }
                     
