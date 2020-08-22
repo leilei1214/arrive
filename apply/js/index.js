@@ -44,7 +44,7 @@ $("#apply").submit(function(event){
                         alert("已註冊");
                     }else{
                         var QRId =  $(this).find("input[name=gmail]").val();
-                        var qrcode = new QRCode("apply", {
+                        new QRCode("apply", {
                             text:QRId,
                             width: 200,
                             height: 200,
@@ -54,6 +54,7 @@ $("#apply").submit(function(event){
                         });
                         var canvas = document.getElementById('apply').querySelector('canvas');
                         var dataURL = canvas.toDataURL();
+                        console.log(dataURL);
                         Email.send({
                             SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
                             To : gmail,
