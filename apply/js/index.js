@@ -61,7 +61,8 @@ $("#apply").submit(function(event){
                             To : gmail,
                             From : "a0933252747@gmail.com",
                             Subject : "This is the subject",
-                            Body :'<img src="'+dataURL+'">' 
+                            Body :'<img src="'+dataURL+'"/> 123'
+                        
                         }).then(
                             message => alert(message),
                         );
