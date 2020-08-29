@@ -44,7 +44,7 @@ $("#apply").submit(function(event){
                         alert("已註冊");
                     }else{
                         let t = Math.random().toString(36).substring(7)
-                        console.log("random", r);
+                        console.log("random", t);
                         // Email.send({
                         //     SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
                         //     To : gmail,
