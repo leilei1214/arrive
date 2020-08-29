@@ -43,29 +43,18 @@ $("#apply").submit(function(event){
                     if(gmail == keys[i] ){
                         alert("已註冊");
                     }else{
-                        var QRId = gmail;
-                        console.log(QRId);
-                        new QRCode("apply", {
-                            text:QRId,
-                            width: 200,
-                            height: 200,
-                            colorDark : "#000000",
-                            colorLight : "#ffffff",
-                            correctLevel : QRCode.CorrectLevel.H
-                        });
-                        var canvas = document.getElementById('apply').querySelector('canvas');
-                        var dataURL = canvas.toDataURL();
-                        console.log(dataURL);
-                        Email.send({
-                            SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
-                            To : gmail,
-                            From : "a0933252747@gmail.com",
-                            Subject : "This is the subject",
-                            Body :'<img url="'+dataURL+'"/> 123'
+                        let t = Math.random().toString(36).substring(7)
+                        console.log("random", r);
+                        // Email.send({
+                        //     SecureToken : "e81d87bd-7f40-4211-a863-657ece2e97dc",
+                        //     To : gmail,
+                        //     From : "a0933252747@gmail.com",
+                        //     Subject : "This is the subject",
+                        //     Body :'<img url="'+dataURL+'"/> 123'
                         
-                        }).then(
-                            message => alert(message),
-                        );
+                        // }).then(
+                        //     message => alert(message),
+                        // );
                         // window.location.href='./index.html';
                     }
                     
